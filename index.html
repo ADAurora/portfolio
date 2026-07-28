@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- ============================================================
+     TITLE VARIANTS — brand is active; to flip to personal, swap:
+     Personal:  <title>Angad — Markets + Automation</title>
+     ============================================================ -->
+<title>TinyCapital — Markets + Automation</title>
+<meta name="description" content="IT professional in NYC building at the intersection of markets and automation. Projects, writing, and experiments.">
+<style>
+  :root {
+    --bg: #0b0d12;
+    --surface: #12151d;
+    --border: #232838;
+    --text: #e7eaf2;
+    --muted: #8b93a7;
+    --faint: #5b6275;
+    --accent: #7aa2ff;
+    --green: #34d399;
+    --blue: #60a5fa;
+    --amber: #fbbf24;
+    --red: #f87171;
+    --mono: ui-monospace, 'SF Mono', 'Menlo', 'Fira Code', monospace;
+    --radius: 8px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 0 20px; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* ---------- header ---------- */
+  header { padding: 56px 0 40px; border-bottom: 1px solid var(--border); }
+  .kicker {
+    font-family: var(--mono); font-size: 12px; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--faint); margin-bottom: 14px;
+  }
+  .kicker .dot { color: var(--green); }
+  h1 { font-size: 30px; letter-spacing: -0.02em; margin-bottom: 12px; }
+  .intro { color: var(--muted); font-size: 16px; max-width: 560px; }
+  .intro strong { color: var(--text); font-weight: 600; }
+
+  /* ---------- sections ---------- */
+  section { padding: 40px 0; border-bottom: 1px solid var(--border); }
+  .sec-label {
+    font-family: var(--mono); font-size: 12px; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--faint); margin-bottom: 22px;
+  }
+  .sec-label::before { content: "// "; color: var(--border); }
+
+  /* ---------- project grid ---------- */
+  .grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
+  @media (min-width: 700px) { .grid { grid-template-columns: 1fr 1fr; } }
+  .card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 18px;
+    display: flex; flex-direction: column; gap: 8px;
+    transition: border-color 0.15s;
+  }
+  .card:hover { border-color: var(--faint); }
+  .card-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+  .card h3 { font-size: 16px; letter-spacing: -0.01em; }
+  .card p { color: var(--muted); font-size: 14px; flex: 1; }
+  .card .link { font-family: var(--mono); font-size: 12.5px; }
+  .more-note {
+    margin-top: 16px; font-family: var(--mono); font-size: 12px;
+    color: var(--faint); letter-spacing: 0.06em;
+  }
+  .badge {
+    font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.08em;
+    text-transform: uppercase; padding: 3px 8px; border-radius: 999px;
+    border: 1px solid; white-space: nowrap;
+  }
+  .b-live    { color: var(--green); border-color: var(--green); }
+  .b-mvp     { color: var(--blue);  border-color: var(--blue); }
+  .b-active  { color: var(--amber); border-color: var(--amber); }
+  .b-shelved { color: var(--faint); border-color: var(--faint); }
+
+  /* ---------- writing ---------- */
+  .article {
+    display: block; background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 16px 18px; margin-bottom: 12px;
+    color: var(--text); transition: border-color 0.15s;
+  }
+  .article:hover { border-color: var(--faint); text-decoration: none; }
+  .article .a-title { font-weight: 600; font-size: 15px; }
+  .article .a-sub { color: var(--muted); font-size: 13.5px; margin-top: 3px; }
+  .article .a-date { font-family: var(--mono); font-size: 11.5px; color: var(--faint); margin-top: 6px; }
+
+  /* ---------- footer ---------- */
+  footer { padding: 40px 0 64px; }
+  .links { display: flex; flex-wrap: wrap; gap: 10px 22px; font-family: var(--mono); font-size: 13.5px; }
+  .links span.label { color: var(--faint); }
+  .foot-note { margin-top: 26px; font-family: var(--mono); font-size: 11.5px; color: var(--faint); }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="kicker"><span class="dot">●</span> NYC · systems online</div>
+    <!-- H1 VARIANTS — brand is active; personal variant: <h1>Angad</h1> -->
+    <h1>TinyCapital</h1>
+    <p class="intro">IT professional in New York building at the intersection of
+    <strong>markets</strong> and <strong>automation</strong>. I ship small,
+    self-contained tools on weekends: dashboards, data pipelines, and trading
+    research systems, and I write about markets at
+    <a href="https://tinycapital.substack.com">TinyCapital</a>.</p>
+  </div>
+</header>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="sec-label">Projects</div>
+    <div class="grid">
+
+      <div class="card">
+        <div class="card-top"><h3>TinyCapital</h3><span class="badge b-live">Live</span></div>
+        <p>Markets + econ publication. Automated content engine posting 3&times;/day
+        on X, plus weekly long-form deep-dives on Substack.</p>
+        <a class="link" href="https://tinycapital.substack.com">tinycapital.substack.com &rarr;</a>
+      </div>
+
+      <div class="card">
+        <div class="card-top"><h3>Trading strategy lab</h3><span class="badge b-active">Active</span></div>
+        <p>Three backtested strategies with custom Pine indicators and an alert
+        system on TradingView. Honest kill-criteria: strategies that fail their
+        numbers get retired, not rationalized.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-top"><h3>Market brief system</h3><span class="badge b-live">Live</span></div>
+        <p>Automated morning, end-of-day, and weekly market briefs. Scheduled
+        launchd jobs feed an LLM pipeline; delivery via Discord and Telegram.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-top"><h3>Command center</h3><span class="badge b-live">Live</span></div>
+        <p>Self-hosted mission-control dashboard for jobs, tasks, and projects.
+        Single-file HTML, zero dependencies, served behind a Cloudflare tunnel.</p>
+      </div>
+
+      <!-- ============================================================
+           ON DECK — these ship to the grid when they actually launch.
+           Uncomment (remove this wrapper) to restore.
+
+      <div class="card">
+        <div class="card-top"><h3>HyperTracker</h3><span class="badge b-mvp">MVP</span></div>
+        <p>On-chain intelligence dashboard for Hyperliquid: live volume, open
+        interest, and funding, each metric paired with a "what this means"
+        narrative. Next.js + FastAPI, auth, mobile-ready.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-top"><h3>SwitchKit</h3><span class="badge b-shelved">Shelved</span></div>
+        <p>Carrier-switching wizard (Next.js): calculates real savings including
+        promos and trade-ins, then generates a personalized porting checklist.</p>
+      </div>
+
+      ============================================================ -->
+
+      <!-- ============================================================
+           ADD A PROJECT — copy this block, paste above, fill it in.
+           Badge classes: b-live (green) · b-mvp (blue) ·
+                          b-active (amber) · b-shelved (gray)
+           Delete the <a> line if there's no public link.
+
+      <div class="card">
+        <div class="card-top"><h3>PROJECT NAME</h3><span class="badge b-live">Live</span></div>
+        <p>One or two lines on what it does and why it exists.</p>
+        <a class="link" href="https://example.com">example.com &rarr;</a>
+      </div>
+
+      ============================================================ -->
+
+    </div>
+    <div class="more-note">// more shipping soon</div>
+  </div>
+</section>
+
+<section id="writing">
+  <div class="wrap">
+    <div class="sec-label">Writing</div>
+
+    <a class="article" href="https://tinycapital.substack.com/p/the-ai-trade-isnt-one-trade">
+      <div class="a-title">The AI Trade Isn't One Trade</div>
+      <div class="a-sub">One glut scare sold the whole stack at once. Watch the supply side instead.</div>
+      <div class="a-date">2026-07-08 · TinyCapital</div>
+    </a>
+
+    <a class="article" href="https://tinycapital.substack.com/p/the-entire-ai-trade-reports-earnings">
+      <div class="a-title">The Entire AI Trade Reports Earnings on Thursday</div>
+      <div class="a-sub">It goes by the name TSMC. Here's the cheat sheet for reading the print.</div>
+      <div class="a-date">2026-07-15 · TinyCapital</div>
+    </a>
+
+    <a class="article" href="https://tinycapital.substack.com/p/the-market-just-ignored-perfect-news">
+      <div class="a-title">The Market Just Ignored Perfect News</div>
+      <div class="a-sub">TSMC ran the table on Thursday. Semis fell anyway. Time to learn how to read sentiment.</div>
+      <div class="a-date">2026-07-22 · TinyCapital</div>
+    </a>
+
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="sec-label">Contact</div>
+    <div class="links">
+      <a href="https://x.com/TinyCapitall">x/@TinyCapitall</a>
+      <a href="https://tinycapital.substack.com">substack</a>
+      <!-- Fill these in (or delete): -->
+      <a href="https://github.com/YOUR_GITHUB">github</a>
+      <a href="mailto:YOUR_EMAIL">email</a>
+    </div>
+    <div class="foot-note">built by hand · one html file · no frameworks · © 2026</div>
+  </div>
+</footer>
+
+</body>
+</html>

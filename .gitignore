@@ -1,0 +1,15 @@
+# Belt-and-suspenders: none of these should ever exist in this repo,
+# but if they appear they will never be committed.
+.env*
+*.pem
+*key*
+*token*
+*secret*
+.telegram-env
+.discord-env
+id_rsa*
+*.p12
+.DS_Store
+
+# Exception: the scanner itself matches *secret* above — keep it tracked
+!check-secrets.sh

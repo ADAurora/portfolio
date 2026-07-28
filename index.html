@@ -4,219 +4,256 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- ============================================================
-     TITLE VARIANTS — brand is active; to flip to personal, swap:
-     Personal:  <title>Angad — Markets + Automation</title>
+     NAME SWAP - the studio name lives in exactly two places:
+     this <title> and the <h1> below. Alternate treatments:
+       <title>TinyCapital - Markets + Automation</title>
      ============================================================ -->
-<title>TinyCapital — Markets + Automation</title>
-<meta name="description" content="IT professional in NYC building at the intersection of markets and automation. Projects, writing, and experiments.">
+<title>Second Hand · a tinkerer's studio</title>
+<meta name="description" content="Second Hand: a tinkerer's studio. Markets, machines, and other moving parts. Built by hand on weekends in NYC.">
 <style>
   :root {
-    --bg: #0b0d12;
-    --surface: #12151d;
-    --border: #232838;
-    --text: #e7eaf2;
-    --muted: #8b93a7;
-    --faint: #5b6275;
-    --accent: #7aa2ff;
-    --green: #34d399;
-    --blue: #60a5fa;
-    --amber: #fbbf24;
-    --red: #f87171;
-    --mono: ui-monospace, 'SF Mono', 'Menlo', 'Fira Code', monospace;
-    --radius: 8px;
+    --paper: #fafaf8;
+    --ink: #2c2e33;
+    --soft: #55585f;
+    --muted: #8a8d95;
+    --line: #d9dade;
+    --jade: rgba(108, 187, 169, 0.18);
+    --jade-line: #4a9d8a;
+    --smoke: rgba(122, 156, 205, 0.16);
+    --smoke-line: #5f83b8;
+    --rose: rgba(228, 145, 165, 0.16);
+    --rose-line: #c76e88;
+    --apricot: rgba(233, 178, 121, 0.18);
+    --apricot-line: #c98d4b;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    line-height: 1.55;
-    -webkit-font-smoothing: antialiased;
+    background: var(--paper); color: var(--ink);
+    font-family: -apple-system, 'Helvetica Neue', 'Segoe UI', sans-serif;
+    font-weight: 300; line-height: 1.6; -webkit-font-smoothing: antialiased;
   }
-  .wrap { max-width: 860px; margin: 0 auto; padding: 0 20px; }
-  a { color: var(--accent); text-decoration: none; }
-  a:hover { text-decoration: underline; }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 0 20px; }
+  a { color: inherit; }
 
   /* ---------- header ---------- */
-  header { padding: 56px 0 40px; border-bottom: 1px solid var(--border); }
+  header { padding: 64px 0 44px; }
   .kicker {
-    font-family: var(--mono); font-size: 12px; letter-spacing: 0.12em;
-    text-transform: uppercase; color: var(--faint); margin-bottom: 14px;
+    font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 18px; font-weight: 400;
   }
-  .kicker .dot { color: var(--green); }
-  h1 { font-size: 30px; letter-spacing: -0.02em; margin-bottom: 12px; }
-  .intro { color: var(--muted); font-size: 16px; max-width: 560px; }
-  .intro strong { color: var(--text); font-weight: 600; }
+  h1 { font-size: 38px; font-weight: 200; letter-spacing: 0.01em; }
+  .tagline { color: var(--soft); font-size: 16px; margin-top: 6px; }
+  .intro { color: var(--muted); max-width: 540px; font-size: 15.5px; margin-top: 16px; }
 
-  /* ---------- sections ---------- */
-  section { padding: 40px 0; border-bottom: 1px solid var(--border); }
-  .sec-label {
-    font-family: var(--mono); font-size: 12px; letter-spacing: 0.14em;
-    text-transform: uppercase; color: var(--faint); margin-bottom: 22px;
+  /* floor-plan nav */
+  nav { display: flex; flex-wrap: wrap; margin-top: 36px; }
+  nav a {
+    border: 1px solid var(--line); padding: 12px 18px; margin: -0.5px;
+    font-size: 11.5px; letter-spacing: 0.14em; text-transform: uppercase;
+    text-decoration: none; font-weight: 400; transition: background 0.2s;
   }
-  .sec-label::before { content: "// "; color: var(--border); }
+  nav a.n-jade:hover, nav a.n-jade:focus { background: var(--jade); }
+  nav a.n-smoke:hover, nav a.n-smoke:focus { background: var(--smoke); }
+  nav a.n-rose:hover, nav a.n-rose:focus { background: var(--rose); }
+  nav a.n-apricot:hover, nav a.n-apricot:focus { background: var(--apricot); }
 
-  /* ---------- project grid ---------- */
-  .grid { display: grid; grid-template-columns: 1fr; gap: 14px; }
-  @media (min-width: 700px) { .grid { grid-template-columns: 1fr 1fr; } }
-  .card {
-    background: var(--surface); border: 1px solid var(--border);
-    border-radius: var(--radius); padding: 18px;
-    display: flex; flex-direction: column; gap: 8px;
-    transition: border-color 0.15s;
+  /* ---------- rooms ---------- */
+  .room {
+    position: relative; border: 1px solid; border-radius: 2px;
+    padding: 28px 24px; margin: 44px 0;
   }
-  .card:hover { border-color: var(--faint); }
-  .card-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
-  .card h3 { font-size: 16px; letter-spacing: -0.01em; }
-  .card p { color: var(--muted); font-size: 14px; flex: 1; }
-  .card .link { font-family: var(--mono); font-size: 12.5px; }
-  .more-note {
-    margin-top: 16px; font-family: var(--mono); font-size: 12px;
-    color: var(--faint); letter-spacing: 0.06em;
+  .room::before, .room::after {
+    content: ""; position: absolute; width: 14px; height: 14px;
+    border-color: inherit; border-style: solid;
   }
+  .room::before { top: -7px; left: -7px; border-width: 1px 0 0 1px; }
+  .room::after { bottom: -7px; right: -7px; border-width: 0 1px 1px 0; }
+  .room.jade    { background: var(--jade);    border-color: var(--jade-line); }
+  .room.smoke   { background: var(--smoke);   border-color: var(--smoke-line); }
+  .room.rose    { background: var(--rose);    border-color: var(--rose-line); }
+  .room.apricot { background: var(--apricot); border-color: var(--apricot-line); }
+  .room-tag {
+    font-size: 10.5px; letter-spacing: 0.2em; text-transform: uppercase;
+    font-weight: 400; margin-bottom: 6px;
+  }
+  .room.jade .room-tag, .room.jade .badge, .room.jade .thread { color: var(--jade-line); }
+  .room.smoke .room-tag, .room.smoke .badge, .room.smoke .thread { color: var(--smoke-line); }
+  .room.rose .room-tag, .room.rose .badge, .room.rose .thread { color: var(--rose-line); }
+  .room.apricot .room-tag, .room.apricot .badge, .room.apricot .thread { color: var(--apricot-line); }
+  .room-intro { color: var(--soft); font-size: 14.5px; margin-bottom: 20px; max-width: 560px; }
+
+  /* objects inside a room */
+  .object {
+    background: rgba(255, 255, 255, 0.55); border: 1px solid rgba(255, 255, 255, 0.9);
+    border-radius: 2px; padding: 18px 20px; margin-bottom: 14px;
+  }
+  .object-top { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
+  .object h3 { font-size: 17px; font-weight: 400; }
   .badge {
-    font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.08em;
-    text-transform: uppercase; padding: 3px 8px; border-radius: 999px;
-    border: 1px solid; white-space: nowrap;
+    font-size: 9.5px; letter-spacing: 0.16em; text-transform: uppercase;
+    font-weight: 400; white-space: nowrap;
   }
-  .b-live    { color: var(--green); border-color: var(--green); }
-  .b-mvp     { color: var(--blue);  border-color: var(--blue); }
-  .b-active  { color: var(--amber); border-color: var(--amber); }
-  .b-shelved { color: var(--faint); border-color: var(--faint); }
+  .object p { color: var(--soft); font-size: 14px; margin-top: 6px; }
+  .thread {
+    display: inline-block; margin-top: 10px; font-size: 13px;
+    letter-spacing: 0.04em; text-decoration: none; border-bottom: 1px dashed;
+  }
+  .thread:hover { border-bottom-style: solid; }
 
-  /* ---------- writing ---------- */
-  .article {
-    display: block; background: var(--surface); border: 1px solid var(--border);
-    border-radius: var(--radius); padding: 16px 18px; margin-bottom: 12px;
-    color: var(--text); transition: border-color 0.15s;
+  /* writing shelf inside markets room */
+  .shelf { margin-top: 4px; }
+  .shelf a {
+    display: block; text-decoration: none; padding: 10px 0;
+    border-top: 1px dashed rgba(74, 157, 138, 0.4);
   }
-  .article:hover { border-color: var(--faint); text-decoration: none; }
-  .article .a-title { font-weight: 600; font-size: 15px; }
-  .article .a-sub { color: var(--muted); font-size: 13.5px; margin-top: 3px; }
-  .article .a-date { font-family: var(--mono); font-size: 11.5px; color: var(--faint); margin-top: 6px; }
+  .shelf .t { font-size: 14px; font-weight: 400; }
+  .shelf .d { font-size: 12px; color: var(--muted); margin-top: 1px; }
 
   /* ---------- footer ---------- */
-  footer { padding: 40px 0 64px; }
-  .links { display: flex; flex-wrap: wrap; gap: 10px 22px; font-family: var(--mono); font-size: 13.5px; }
-  .links span.label { color: var(--faint); }
-  .foot-note { margin-top: 26px; font-family: var(--mono); font-size: 11.5px; color: var(--faint); }
+  footer { padding: 16px 0 64px; }
+  .links { display: flex; flex-wrap: wrap; gap: 8px 22px; font-size: 13px; letter-spacing: 0.04em; }
+  .links a { color: var(--soft); text-decoration: none; border-bottom: 1px dashed var(--line); }
+  .links a:hover { border-bottom-style: solid; }
+  .foot-note { margin-top: 24px; font-size: 11px; letter-spacing: 0.08em; color: var(--muted); }
+
+  @media (min-width: 700px) {
+    .room { padding: 34px 32px; }
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .two-col .object { margin-bottom: 0; }
+  }
 </style>
 </head>
 <body>
 
 <header>
   <div class="wrap">
-    <div class="kicker"><span class="dot">●</span> NYC · systems online</div>
-    <!-- H1 VARIANTS — brand is active; personal variant: <h1>Angad</h1> -->
-    <h1>TinyCapital</h1>
-    <p class="intro">IT professional in New York building at the intersection of
-    <strong>markets</strong> and <strong>automation</strong>. I ship small,
-    self-contained tools on weekends: dashboards, data pipelines, and trading
-    research systems, and I write about markets at
-    <a href="https://tinycapital.substack.com">TinyCapital</a>.</p>
+    <div class="kicker">A studio in four rooms · NYC</div>
+    <!-- NAME SWAP part 2: the h1. Alternate: <h1>TinyCapital</h1> -->
+    <h1>Second Hand</h1>
+    <p class="tagline">markets, machines, and other moving parts</p>
+    <p class="intro">A tinkerer's studio. Everything here is built by hand, on
+    weekends, and left translucent enough to see how it was made.</p>
+    <nav>
+      <a class="n-jade" href="#markets">Markets &amp; economics</a>
+      <a class="n-smoke" href="#code">Code &amp; automation</a>
+      <a class="n-rose" href="#art">Art &amp; design</a>
+      <a class="n-apricot" href="#machines">Machines &amp; time</a>
+    </nav>
   </div>
 </header>
 
-<section id="projects">
-  <div class="wrap">
-    <div class="sec-label">Projects</div>
-    <div class="grid">
+<main class="wrap">
 
-      <div class="card">
-        <div class="card-top"><h3>TinyCapital</h3><span class="badge b-live">Live</span></div>
-        <p>Markets + econ publication. Automated content engine posting 3&times;/day
-        on X, plus weekly long-form deep-dives on Substack.</p>
-        <a class="link" href="https://tinycapital.substack.com">tinycapital.substack.com &rarr;</a>
-      </div>
+  <section class="room jade" id="markets">
+    <div class="room-tag">Room 01 · Markets &amp; economics</div>
+    <p class="room-intro">The TinyCapital room: writing and systems for reading
+    markets without flinching.</p>
 
-      <div class="card">
-        <div class="card-top"><h3>Trading strategy lab</h3><span class="badge b-active">Active</span></div>
-        <p>Three backtested strategies with custom Pine indicators and an alert
-        system on TradingView. Honest kill-criteria: strategies that fail their
-        numbers get retired, not rationalized.</p>
-      </div>
-
-      <div class="card">
-        <div class="card-top"><h3>Market brief system</h3><span class="badge b-live">Live</span></div>
-        <p>Automated morning, end-of-day, and weekly market briefs. Scheduled
-        launchd jobs feed an LLM pipeline; delivery via Discord and Telegram.</p>
-      </div>
-
-      <div class="card">
-        <div class="card-top"><h3>Command center</h3><span class="badge b-live">Live</span></div>
-        <p>Self-hosted mission-control dashboard for jobs, tasks, and projects.
-        Single-file HTML, zero dependencies, served behind a Cloudflare tunnel.</p>
-      </div>
-
-      <!-- ============================================================
-           ON DECK — these ship to the grid when they actually launch.
-           Uncomment (remove this wrapper) to restore.
-
-      <div class="card">
-        <div class="card-top"><h3>HyperTracker</h3><span class="badge b-mvp">MVP</span></div>
-        <p>On-chain intelligence dashboard for Hyperliquid: live volume, open
-        interest, and funding, each metric paired with a "what this means"
-        narrative. Next.js + FastAPI, auth, mobile-ready.</p>
-      </div>
-
-      <div class="card">
-        <div class="card-top"><h3>SwitchKit</h3><span class="badge b-shelved">Shelved</span></div>
-        <p>Carrier-switching wizard (Next.js): calculates real savings including
-        promos and trade-ins, then generates a personalized porting checklist.</p>
-      </div>
-
-      ============================================================ -->
-
-      <!-- ============================================================
-           ADD A PROJECT — copy this block, paste above, fill it in.
-           Badge classes: b-live (green) · b-mvp (blue) ·
-                          b-active (amber) · b-shelved (gray)
-           Delete the <a> line if there's no public link.
-
-      <div class="card">
-        <div class="card-top"><h3>PROJECT NAME</h3><span class="badge b-live">Live</span></div>
-        <p>One or two lines on what it does and why it exists.</p>
-        <a class="link" href="https://example.com">example.com &rarr;</a>
-      </div>
-
-      ============================================================ -->
-
+    <div class="object">
+      <div class="object-top"><h3>TinyCapital</h3><span class="badge">Live</span></div>
+      <p>A markets and economics publication. One deep essay every Wednesday on
+      Substack, plus an automated engine posting daily on X.</p>
+      <a class="thread" href="https://tinycapital.substack.com">tinycapital.substack.com</a>
     </div>
-    <div class="more-note">// more shipping soon</div>
-  </div>
-</section>
 
-<section id="writing">
-  <div class="wrap">
-    <div class="sec-label">Writing</div>
+    <div class="object">
+      <div class="object-top"><h3>Market brief system</h3><span class="badge">Live</span></div>
+      <p>Morning, end of day, and weekly briefs that write themselves.
+      Scheduled jobs feed an LLM pipeline; delivery lands in Discord and
+      Telegram before the coffee is ready.</p>
+    </div>
 
-    <a class="article" href="https://tinycapital.substack.com/p/the-ai-trade-isnt-one-trade">
-      <div class="a-title">The AI Trade Isn't One Trade</div>
-      <div class="a-sub">One glut scare sold the whole stack at once. Watch the supply side instead.</div>
-      <div class="a-date">2026-07-08 · TinyCapital</div>
-    </a>
+    <div class="object">
+      <div class="object-top"><h3>From the essays</h3></div>
+      <div class="shelf">
+        <a href="https://tinycapital.substack.com/p/the-ai-trade-isnt-one-trade">
+          <div class="t">The AI Trade Isn't One Trade</div>
+          <div class="d">2026-07-08 · capital cycles</div>
+        </a>
+        <a href="https://tinycapital.substack.com/p/the-entire-ai-trade-reports-earnings">
+          <div class="t">The Entire AI Trade Reports Earnings on Thursday</div>
+          <div class="d">2026-07-15 · the TSMC cheat sheet</div>
+        </a>
+        <a href="https://tinycapital.substack.com/p/the-market-just-ignored-perfect-news">
+          <div class="t">The Market Just Ignored Perfect News</div>
+          <div class="d">2026-07-22 · reading sentiment</div>
+        </a>
+      </div>
+    </div>
+  </section>
 
-    <a class="article" href="https://tinycapital.substack.com/p/the-entire-ai-trade-reports-earnings">
-      <div class="a-title">The Entire AI Trade Reports Earnings on Thursday</div>
-      <div class="a-sub">It goes by the name TSMC. Here's the cheat sheet for reading the print.</div>
-      <div class="a-date">2026-07-15 · TinyCapital</div>
-    </a>
+  <section class="room smoke" id="code">
+    <div class="room-tag">Room 02 · Code &amp; automation</div>
+    <p class="room-intro">Small tools that run the studio. Zero frameworks
+    where zero frameworks will do.</p>
 
-    <a class="article" href="https://tinycapital.substack.com/p/the-market-just-ignored-perfect-news">
-      <div class="a-title">The Market Just Ignored Perfect News</div>
-      <div class="a-sub">TSMC ran the table on Thursday. Semis fell anyway. Time to learn how to read sentiment.</div>
-      <div class="a-date">2026-07-22 · TinyCapital</div>
-    </a>
+    <div class="two-col">
+      <div class="object">
+        <div class="object-top"><h3>Command center</h3><span class="badge">Live</span></div>
+        <p>A self-hosted mission control dashboard, one HTML file, that runs
+        jobs, tasks, and projects behind a quiet tunnel.</p>
+      </div>
+      <div class="object">
+        <div class="object-top"><h3>Trading strategy lab</h3><span class="badge">Active</span></div>
+        <p>Backtested strategies with custom Pine indicators and an alert
+        system on TradingView. Honest kill criteria: strategies that fail
+        their numbers get retired, not rationalized.</p>
+      </div>
+    </div>
 
-  </div>
-</section>
+    <!-- ============================================================
+         ADD AN OBJECT - copy this block into any room, fill it in.
+         Badges are plain words: Live / Active / Open / Shelved.
+         Delete the <a> line if there is no public link.
+
+    <div class="object">
+      <div class="object-top"><h3>PROJECT NAME</h3><span class="badge">Live</span></div>
+      <p>One or two lines on what it does and why it exists.</p>
+      <a class="thread" href="https://example.com">example.com</a>
+    </div>
+
+    ============================================================ -->
+  </section>
+
+  <section class="room rose" id="art">
+    <div class="room-tag">Room 03 · Art &amp; design</div>
+    <p class="room-intro">This room is small on purpose. It grows as things
+    get made.</p>
+
+    <div class="object">
+      <div class="object-top"><h3>Chart artifacts</h3><span class="badge">Growing</span></div>
+      <p>The hand drawn instrument panels and capital cycle maps from the
+      essays. Data made quiet and legible, one figure at a time.</p>
+    </div>
+  </section>
+
+  <section class="room apricot" id="machines">
+    <div class="room-tag">Room 04 · Machines &amp; time</div>
+    <p class="room-intro">The small quiet room: timepieces, cars, and the
+    machines that watch for them.</p>
+
+    <div class="two-col">
+      <div class="object">
+        <div class="object-top"><h3>Skyline alert system</h3><span class="badge">Live</span></div>
+        <p>A scraper that watches JDM brokers for Nissan Skylines, R32 through
+        R34, filters by price and mileage, and posts new finds to Discord.
+        A machine that hunts for machines.</p>
+      </div>
+      <div class="object">
+        <div class="object-top"><h3>On keeping time</h3><span class="badge">Open</span></div>
+        <p>Notes on watches and why mechanical things still matter are on
+        their way. The door to this room stays open.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
 
 <footer>
   <div class="wrap">
-    <div class="sec-label">Contact</div>
     <div class="links">
-      <a href="https://x.com/TinyCapitall">x/@TinyCapitall &mdash; DMs open</a>
+      <a href="https://x.com/TinyCapitall">x/@TinyCapitall · DMs open</a>
       <a href="https://tinycapital.substack.com">substack</a>
       <a href="https://github.com/ADAurora">github</a>
       <!-- Branded email can slot in later:
